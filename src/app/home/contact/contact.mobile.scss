@@ -1,0 +1,32 @@
+@media (max-width: 800px) {
+    .page {
+        display: flex;
+        flex-direction: column;
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 0 30px;
+            margin-top: -2rem;
+            margin-bottom: 2rem;
+            .contacts-adresss {
+                width: 100%;
+            }
+            .contacts-form {
+                width: 100%;
+                mat-card {
+                    mat-card-content {
+                        padding: 0 15px;
+                        form {
+                            display: flex;
+                            flex-direction: column;
+                            mat-form-field {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

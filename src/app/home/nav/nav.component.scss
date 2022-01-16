@@ -1,0 +1,28 @@
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky; /* For macOS/iOS Safari */
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+    a {
+        text-decoration: none;
+        color: inherit;
+        .logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            mat-icon {
+                font-size: 20px;
+                margin-top: 5px;
+                margin-right: -5px;
+            }
+        }
+    }
+    .spacer {
+        flex: 1 1 auto;
+    }   
+    a {
+        mat-icon {
+            font-size: 20px;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.status-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    mat-card {
+        width: 40%;
+        mat-card-content {
+            color: rgb(44, 42, 42);
+        }
+    }
+}

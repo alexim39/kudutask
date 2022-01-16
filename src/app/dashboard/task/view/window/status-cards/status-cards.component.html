@@ -1,0 +1,21 @@
+<kudutask-timeline [task]="task"></kudutask-timeline>
+
+<div class="status-cards">
+  <mat-card>
+    <div class="mat-h2">Task Progress</div>
+    <mat-card-content>
+      <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+      <small>Task progress should be about {{getTaskStatusPercentage(task)}} complete</small> <br>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <div class="mat-h2">Task Status</div>
+    <mat-card-content>
+      <small mat-card-avatar class="status">
+        <!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+        {{task.status | titlecase}}
+      </small>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,20 @@
+@media (max-width: 800px) {
+    .feature {
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-bottom: 5rem;
+        .column {
+            width: 300px;
+            margin-bottom: -5rem;
+            .mat-h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+} 

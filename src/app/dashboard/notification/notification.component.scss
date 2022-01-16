@@ -1,0 +1,51 @@
+.mat-badge-content {
+    background: orange;
+}
+
+a {
+    mat-icon {
+        font-size: 20px;
+    }
+}
+
+.content {
+    max-height: 35rem;
+    section {
+        max-height: 10rem;
+        padding: 1rem;
+        background-color: #eee;
+        text-align: center;
+        border-bottom: 1px solid white;
+        .mat-h3 {
+            margin-bottom: -1rem;
+        }
+        .mat-body {
+            text-align: left;
+            font-size: 0.7rem;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            position: relative;
+            left: 90px;
+            bottom: 0;
+            font-size: 10px;
+        }
+    }
+}
+
+.view-all {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 0.7rem;
+    a {
+        text-decoration: none;
+        color: rgb(44, 44, 153);
+    }
+    a:hover {
+        color: rgb(45, 45, 155);
+    }
+}
+   

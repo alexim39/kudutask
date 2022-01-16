@@ -1,0 +1,160 @@
+<section>
+  <div class="breadcrumb-wrap">
+    <ul class="breadcrumb">
+      <li>
+        <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+      </li>
+      <li>profile</li>
+    </ul>
+  </div>
+
+    <mat-card class="profile-details">
+        
+      <mat-card-header>
+        <div mat-card-avatar class="card-img">
+          <img mat-card-image [src]="imagePath">
+        </div>
+        <mat-card-title>Profile Information</mat-card-title>
+        <mat-card-subtitle>{{user.firstname | titlecase}} {{user.lastname | titlecase}}</mat-card-subtitle>
+      </mat-card-header>
+        
+
+        <mat-card-content>
+            <div class="mat-title">Edit Information</div>
+
+            <section>
+                <div class="lable">
+                    <div class="mat-subheading-1">Current Profile</div>
+                    <div>
+                        <mat-form-field>
+                          <mat-label>First name</mat-label>
+                          <input matInput value="{{user.firstname | titlecase}}" disabled>
+                        </mat-form-field>
+                      
+                        <mat-form-field>
+                          <mat-label>Last name</mat-label>
+                          <input matInput value="{{user.lastname | titlecase}}" disabled>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Organization</mat-label>
+                            <input matInput value="{{user.organization | titlecase}}" disabled>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Job title</mat-label>
+                            <input matInput value="{{user.jobTitle | titlecase}}" disabled>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Email address</mat-label>
+                            <input matInput value="{{user.email | lowercase}}"  disabled>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Phone number</mat-label>
+                            <input matInput value="{{user.phone}}"  disabled>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                          <mat-label>About yourself</mat-label>
+                          <input matInput value="{{user.about | sentencecase}}"  disabled>
+                      </mat-form-field>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="mat-subheading-1">Edit Profile</div>
+                    <form [formGroup] = "profileForm" (ngSubmit) = "onSubmit(profileForm.value)">
+                        <mat-form-field>
+                          <mat-label>First name</mat-label>
+                          <input matInput formControlName="firstname">
+                          <mat-error *ngIf=" profileForm.get('firstname').hasError('required')">
+                            Your first name is required
+                          </mat-error>
+                          <mat-error *ngIf=" profileForm.get('firstname').hasError('pattern')">
+                            Enter a valid first name
+                          </mat-error>
+                        </mat-form-field>
+                      
+                        <mat-form-field>
+                          <mat-label>Last name</mat-label>
+                          <input matInput formControlName="lastname">
+                          <mat-error *ngIf=" profileForm.get('lastname').hasError('required')">
+                            Your last name is required
+                          </mat-error>
+                          <mat-error *ngIf=" profileForm.get('lastname').hasError('pattern')">
+                            Enter a valid last name
+                          </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Job title</mat-label>
+                            <input matInput formControlName="jobTitle">
+                            <mat-error *ngIf=" profileForm.get('jobTitle').hasError('required')">
+                                Your job title is required
+                              </mat-error>
+                              <!-- <mat-error *ngIf=" profileForm.get('jobTitle').hasError('pattern')">
+                                Enter a valid job title
+                              </mat-error> -->
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <mat-label>Organization</mat-label>
+                            <input matInput formControlName="organization">
+                            <mat-error *ngIf=" profileForm.get('organization').hasError('required')">
+                                Your organization name is required
+                              </mat-error>
+                              <!-- <mat-error *ngIf=" profileForm.get('organization').hasError('pattern')">
+                                Enter a valid organization name
+                              </mat-error> -->
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <mat-label>Email address</mat-label>
+                            <input matInput formControlName="email">
+                            <mat-error *ngIf=" profileForm.get('email').hasError('required')">
+                                Your email is required
+                              </mat-error>
+                              <mat-error *ngIf=" profileForm.get('email').hasError('email')">
+                                Enter a valid email
+                              </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <mat-label>Phone number</mat-label>
+                            <input matInput formControlName="phone">
+                            <mat-error *ngIf=" profileForm.get('phone').hasError('required')">
+                                Your phone number is required
+                              </mat-error>
+                              <mat-error *ngIf=" profileForm.get('phone').hasError('pattern')">
+                                Enter a valid phone number
+                              </mat-error>
+                              <mat-error *ngIf=" profileForm.get('phone').hasError('maxLength')">
+                                Phone number is more than required
+                              </mat-error>
+                          </mat-form-field>
+
+                          <mat-form-field>
+                            <mat-label>About yourself</mat-label>
+                            <input matInput #about maxlength="55" formControlName="about" placeholder="Describe how people should see you">
+                            <mat-hint align="start"><strong>We don't disclose personal info</strong> </mat-hint>
+                            <mat-hint align="end">{{about.value.length}} / 55</mat-hint>
+                            <mat-error *ngIf=" profileForm.get('about').hasError('maxLength')">
+                              Enter a valid phone number
+                            </mat-error>
+                          </mat-form-field>
+
+                          <button [disabled]="profileForm.invalid" mat-flat-button color="primary">Update</button>
+                    </form>
+                </div>
+            </section>
+        </mat-card-content>    
+    </mat-card>
+
+    <!-- Delete Account -->
+    <mat-card class="delete-profile">
+      <button (click)="deleteProfile()" mat-flat-button color="warn">DELETE ACCOUNT</button>
+    </mat-card>
+
+      
+</section>

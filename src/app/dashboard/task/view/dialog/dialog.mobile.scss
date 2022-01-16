@@ -1,0 +1,78 @@
+@media (max-width: 800px) {
+    section {
+        .action-btn {
+            cursor: pointer;
+            float: right;
+            a {
+                color: inherit;
+                mat-icon {
+                    margin-left: 6px;
+                }
+            }
+        h1 {
+            .title {
+                width: 50px !important;
+            }
+           
+            }
+        }
+        form {
+            width: 100%;
+            mat-form-field {
+                width: 100%;
+            }
+            mat-hint {
+                font-size: 12px;
+            }
+            mat-radio-group {
+                .mat-radio-button {
+                    margin: 15px 0;
+                    display: flex;
+                    font-size: 11px;
+                    flex-direction: column;
+                }
+            }
+        }
+        mat-dialog-content {
+            width: 100%;
+            //height: 450px;
+            margin-top: 35px;
+            mat-divider {
+                margin: 20px 0;
+            }
+            .task-status {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-bottom: 15px;
+                section {
+                    color: #aaa;
+                    .slide {
+                        color: rgb(15, 4, 43);
+                    }
+                }
+            }
+            .task-priority {
+                margin-bottom: 15px;
+                color: rgb(66, 63, 63);
+                span {
+                    font-weight: bolder;
+                }
+            }
+            .task-timeline {
+                margin-bottom: 30px;
+            }
+        }
+        .hide-on-mobile {
+            display: none;
+        }
+        mat-dialog-actions {
+            button {
+                mat-icon {
+                    font-size: 15px;
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}

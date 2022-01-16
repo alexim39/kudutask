@@ -1,0 +1,36 @@
+@media (max-width: 800px) {
+    section {
+        width: 75%;
+        margin: 0 auto;
+        overflow: hidden;
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: gray;
+            font-size: 15px;
+        }
+        .container {    
+            display: flex;    
+            overflow-x: auto;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 0;
+            figure {
+                margin-left: 5px;
+                img {    
+                    width: 80px;
+                    height: 80px;
+                }
+                figcaption {
+                    text-align: center;
+                    color: gray;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    
+    .container::-webkit-scrollbar {    
+        display: none;
+    }
+}

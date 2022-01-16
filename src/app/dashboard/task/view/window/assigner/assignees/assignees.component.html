@@ -1,0 +1,108 @@
+<ng-container *ngIf="progressReports.length > 0">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let report of progressReports">
+          <mat-expansion-panel-header>
+          <mat-panel-title>{{report.assignee.firstname | titlecase}} {{report.assignee.lastname | titlecase}}'s Progress</mat-panel-title>
+          </mat-expansion-panel-header>
+    
+          <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item>Acknowledgement</mat-list-item>
+            <table>
+                <tr>
+                    <th>Understanding of task requirement</th>
+                    <td> {{report.isUnderstandTask ? 'Yes' : 'No'}} </td>
+                </tr>
+                <tr>
+                    <th>Access to required information</th>
+                    <td> {{report.isHaveInfo ? 'Yes' : 'No'}}</td>
+                </tr>
+                <tr>
+                    <th>Task in progress</th>
+                    <td>{{report.isStartTask ? 'Yes' : 'No'}}</td>
+                </tr>
+                <tr>
+                    <th>Start date</th>
+                    <td>{{report.startDate | date :'medium'}}</td>
+                </tr>
+            </table>
+            <mat-divider></mat-divider>
+    
+            <mat-list-item>Progress</mat-list-item>
+            <table>
+                <tr>
+                    <th>Comments</th>
+                    <td *ngIf="report.challenges">{{report.challenges.comments | sentencecase}}</td>
+                    <td *ngIf="!report.challenges">No comment from assignee</td>
+                </tr>
+                <tr>
+                    <th>Challenges</th>
+                    <td *ngIf="report.challenges">{{report.challenges.isEncounterChallenge ? 'Yes' : 'No'}}</td>
+                </tr>
+                <tr>
+                    <th>Tentative completion date</th>
+                    <td *ngIf="report.challenges">{{report.challenges.tentativeDate | date }}</td>
+                    <td *ngIf="!report.challenges">No tentative date yet</td>
+                </tr>
+            </table>
+            <mat-divider></mat-divider>
+    
+            <mat-list-item>Completed</mat-list-item>
+            <table>
+                <tr>
+                    <th>Task completed</th>
+                    <td *ngIf="report.isTaskComplete">{{report.isTaskComplete | titlecase}}</td>
+                    <td *ngIf="!report.isTaskComplete">Task not yet completed</td>
+                </tr>
+                <tr>
+                    <th>Complete date</th>
+                    <td *ngIf="report.taskCompleteDate">{{report.taskCompleteDate | date :'medium'}}</td>
+                    <td *ngIf="!report.taskCompleteDate">No completed date</td>
+                </tr>
+            </table>
+          </mat-list>
+    
+        </mat-expansion-panel>
+    </mat-accordion>
+</ng-container>
+
+<!-- <ng-container *ngIf="progressReports.length == 0">
+    <p>This task was not assigned to anyone</p>
+</ng-container> -->
+
+
+<ng-container *ngIf="pendingReports.length > 0">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let report of pendingReports">
+          <mat-expansion-panel-header>
+          <mat-panel-title>{{report.assignee.firstname | titlecase}} {{report.assignee.lastname | titlecase}}'s Progress</mat-panel-title>
+          </mat-expansion-panel-header>
+    
+          <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item>Acknowledgement</mat-list-item>
+            <table>
+                <tr>
+                    <th>Understanding of task requirement</th>
+                    <td> {{report.isUnderstandTask ? 'Yes' : 'No'}} </td>
+                </tr>
+                <tr>
+                    <th>Access to required information</th>
+                    <td> {{report.isHaveInfo ? 'Yes' : 'No'}}</td>
+                </tr>
+                <tr>
+                    <th>Task in progress</th>
+                    <td>{{report.isStartTask ? 'Yes' : 'No'}}</td>
+                </tr>
+                <tr>
+                    <th>Start date</th>
+                    <td>{{report.startDate | date :'medium'}}</td>
+                </tr>
+            </table>
+            <mat-divider></mat-divider>
+    
+          </mat-list>
+    
+        </mat-expansion-panel>
+    </mat-accordion>
+</ng-container>

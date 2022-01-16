@@ -1,0 +1,25 @@
+mat-accordion {
+    mat-expansion-panel {
+        mat-list {
+            table {
+                width: 100%;
+                tr {
+                    th {
+                        font-size: 12px;
+                        text-align: left;
+                        color: grey;
+                        font-weight: normal;
+                    }
+                    td {
+                        float: right;
+                        font-weight: normal;
+                        font-size: 12px;
+                    }
+                }
+            }
+            mat-divider {
+                margin-top: 5px;
+            }
+        }
+    }
+}

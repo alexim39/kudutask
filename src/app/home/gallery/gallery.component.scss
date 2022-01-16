@@ -1,0 +1,46 @@
+.gallery {
+    width: 100%;
+    background-color:rgb(246, 243, 247);
+    height: 400px;
+
+    section {
+        width: 65%;
+        margin: 0 auto;
+        overflow: hidden;
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: gray;
+        }
+        .container {    
+            display: flex;    
+            overflow-x: auto;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 0;
+            figure {
+                img {    
+                    width: 100px;
+                    height: 100px;
+                }
+                figcaption {
+                    text-align: center;
+                    color: gray;
+                    font-size: 12px;
+                }
+            }
+        }
+        mat-icon {
+        position: relative;
+        bottom: 80px; 
+        left: 500px;
+        cursor: pointer;
+        color: gray;
+        margin-left: 10px;
+        }
+    }
+}
+
+.container::-webkit-scrollbar {    
+    display: none;
+}

@@ -1,0 +1,24 @@
+section {
+    p {
+        color: gray;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        .task-report {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+        }
+        .task-progress {
+            width: 40%;
+            height: 100%;
+
+        }
+       
+    }
+}
+

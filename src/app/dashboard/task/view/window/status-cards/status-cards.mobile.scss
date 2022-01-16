@@ -1,0 +1,17 @@
+@media (max-width: 800px) {
+    .timeline {
+        margin-top: 1rem;
+    }
+    .status-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        mat-card {
+            margin-bottom: 1rem;
+            width: inherit;
+            mat-card-content {
+                color: rgb(44, 42, 42);
+            }
+        }
+    }
+}

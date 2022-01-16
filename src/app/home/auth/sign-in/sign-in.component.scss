@@ -1,0 +1,52 @@
+section {
+    height: 100%;
+    background-color:whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;       
+    mat-card {
+        padding: 1.8rem 1.5rem;
+        width: 25%;
+        color: grey;
+        mat-card-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            img {
+                background-size: cover;
+                border-radius: 50%;
+                width: 8rem;
+            }
+        }
+        mat-card-content {
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                mat-form-field {
+                    width: 100%;
+                    margin-bottom: 1.5rem;
+                    div {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        mat-card-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            a {
+                font-weight: normal;
+                font-size: 0.7rem;
+                mat-icon {
+                    font-size: 12px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}

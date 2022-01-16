@@ -1,0 +1,18 @@
+@media (max-width: 800px) {
+    section {
+        width: auto;
+        h1 {
+            span {
+                cursor: pointer;
+                float: right;
+            }
+        }
+        mat-dialog-content {
+            width: 100%;
+            margin-top: 35px;
+            mat-form-field {
+                width: 100%;
+            }
+        }
+    }
+}

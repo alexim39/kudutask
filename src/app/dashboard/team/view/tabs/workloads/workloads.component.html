@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar><img src="./../../../../../assets/img/spp.png"></div>
+        <mat-card-title>{{member.lastname | titlecase}} {{member.firstname | titlecase}}
+        </mat-card-title>
+        <mat-card-subtitle>{{member.jobTitle | titlecase}} | {{member.email | lowercase |
+            truncate:20}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="account-status"><small>{{member.isActive | accountStatus}} Account</small></p>
+        <p>{{member.about | sentencecase}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button *ngIf="isCreator" (click)="viewWorkload(member._id, team._id)" mat-flat-button color="warn" title="Remove user from team">View workload</button>
+        <button *ngIf="member._id === currentUser && !isCreator" (click)="viewWorkload(member._id, team._id)" mat-flat-button color="warn" title="leave team">View workload</button>
+
+        <!-- <button *ngIf="isCreator || member._id === currentUser" mat-flat-button title="View workload">Workload</button> -->
+    </mat-card-actions>
+</mat-card>

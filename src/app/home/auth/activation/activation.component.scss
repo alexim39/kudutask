@@ -1,0 +1,41 @@
+.page {
+    height: 100%;
+    background-color:whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .activation {
+        width: 50%;
+        mat-card {
+            background-color:rgb(185, 168, 216);
+            color: black;
+            mat-card-content {
+                .sucess {
+                    color: rgb(12, 88, 12);
+                    font-size: 15px;
+                    a {
+                        display: inline-block;
+                        text-decoration: underline;
+                        font-weight: bold;
+                        color: inherit
+                    }
+                    a:hover {
+                        text-decoration: none;
+                    }
+                }
+                .error {
+                    color: rgb(187, 46, 46);
+                    font-size: 15px;
+                    a {
+                        display: block;
+                        margin-top: 9px;
+                        color: rgb(111, 0, 255);
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    }
+}

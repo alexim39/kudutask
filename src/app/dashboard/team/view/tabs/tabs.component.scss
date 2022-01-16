@@ -1,0 +1,33 @@
+section {
+    width: 90%;
+    mat-tab-group {
+        .content {
+            padding-top: 20px;
+            .add-btn {
+                display: flex;
+                flex-direction: row;
+                justify-content:flex-end;
+              button {
+                display: inline-block;
+                margin-right: 10px;
+                mat-icon {
+                    font-size: 14px;
+                    margin-top: 8px;
+                }
+              }
+            }
+            p {
+                display: inline-block;
+            }
+            mat-divider {
+                margin: 10px 0;
+            }
+            .card-wrap {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+           
+        }
+    }
+}

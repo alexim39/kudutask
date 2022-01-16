@@ -1,0 +1,24 @@
+mat-card {
+    margin-top: -20px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .warning {
+        color: rgb(255, 115, 0);
+    }
+    .icons {
+        .email {
+            cursor: pointer;
+            color:rgb(255, 115, 0)
+        }
+        .email:hover {
+            color: gray;
+        }
+        .close {
+            margin-left: 15px;
+            float: right;
+            cursor: pointer;
+        }
+    }
+}

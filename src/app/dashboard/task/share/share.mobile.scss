@@ -1,0 +1,70 @@
+@media (max-width: 800px) {
+    section {
+        width: auto;
+        .action-btn {
+            cursor: pointer;
+            float: right;
+            mat-icon {
+                margin-left: 6px;
+            }
+        h1 {
+            .title {
+                width: 50px !important;
+            }
+           
+            }
+        }
+        p {
+            color: rgb(155, 151, 151);
+        }
+        form {
+            width: 100%;
+            mat-form-field {
+                width: 100%;
+            }
+            mat-hint {
+                font-size: 12px;
+            }
+            mat-radio-group {
+                .mat-radio-button {
+                    margin: 15px 0;
+                    display: flex;
+                    font-size: 11px;
+                    flex-direction: column;
+                }
+            }
+        }
+        mat-dialog-content {
+            width: 100%;
+            height: 250px;
+            margin-top: 35px;
+            mat-divider {
+                margin: 20px 0;
+            }
+        }
+        mat-dialog-actions {
+            button {
+                mat-icon {
+                    font-size: 15px;
+                    margin-top: 8px;
+                }
+            }        
+        }
+    
+        mat-list {
+            mat-list-item {
+                margin-bottom: -25px;
+                margin-top: -10px;
+                font-size: 14px;
+                small {
+                    display: block !important;
+                    color: gray;
+                    margin-left: 25px;
+                }
+            }
+        }
+        
+        
+    }
+    
+}

@@ -1,0 +1,35 @@
+section {
+    width: 500px;
+    h1 {
+        span {
+            cursor: pointer;
+            float: right;
+        }
+    }
+    form {
+        width: 100%;
+        mat-form-field {
+            width: 100%;
+        }
+        mat-hint {
+            font-size: 12px;
+        }
+        mat-radio-group {
+            .mat-radio-button {
+                margin: 15px 0;
+                display: flex;
+                font-size: 11px;
+                flex-direction: column;
+            }
+        }
+    }
+    mat-dialog-content {
+        width: 100%;
+        margin-top: 35px;
+    }
+    mat-dialog-actions {
+        button {
+            width: 25%;
+        }
+    }
+}

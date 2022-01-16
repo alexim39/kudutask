@@ -1,0 +1,31 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    .contacts {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        justify-content: center;
+        .contacts-adresss {
+            width: 55%;
+            margin-top: 5rem;
+        }
+        .contacts-form {
+            margin-top: 5rem;
+            width: 25%;
+            mat-card {
+                mat-card-content {
+                    padding: 0 15px;
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        mat-form-field {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

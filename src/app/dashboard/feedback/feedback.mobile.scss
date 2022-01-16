@@ -1,0 +1,20 @@
+@media (max-width: 800px) {
+    section {
+        .feedback-details {
+            width: auto;            
+            mat-card-content {
+                form {
+                    mat-form-field {
+                        width: 100%;
+                    }
+                    button {
+                        display: block;
+                        margin-top: 12px; 
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+    }
+}

@@ -1,0 +1,54 @@
+<ng-container *ngIf="!isEmptyResponse">
+    <section *ngIf="teams.length > 0">
+        <mat-tab-group>
+            <mat-tab label="Team">
+                <div class="content">
+                    <div class="mat-h1">{{team.name | uppercase}} </div>
+                    <p>{{team.description | sentencecase}}</p>
+                    <div class="add-btn">
+                        <button (click)="openEditTeamDetailDialog(team)" *ngIf="isCreator" mat-flat-button
+                            color="primary">Edit team <mat-icon>edit</mat-icon></button>
+                        <button (click)="deleteTeam(team)" *ngIf="isCreator" mat-flat-button color="warn">Delete team
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <!-- shared tasks -->
+                    <kudutask-shared-tasks [teams]="teams"></kudutask-shared-tasks>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Members">
+                <div class="content">
+                    <div class="mat-h1">{{team.name | uppercase}} </div>
+                    <p>{{team.description | sentencecase}}</p>
+                    <div class="add-btn">
+                        <button (click)="openAddTeamMemberDialog(team)" *ngIf="isCreator" mat-flat-button color="accent">
+                            Add team member<mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                    <mat-divider></mat-divider>
+
+                    <div class="card-wrap">
+                        <kudutask-members *ngFor="let member of members" [member]="member" [team]="team"></kudutask-members>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Workloads">
+                <div class="content">
+                    <div class="mat-h1">{{team.name | uppercase}} </div>
+                    <p>{{team.description | sentencecase}}</p>
+                    <mat-divider></mat-divider>
+
+                    <div class="card-wrap">
+                        <kudutask-workloads *ngFor="let member of members" [member]="member" [team]="team"></kudutask-workloads>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </section>
+</ng-container>
+<ng-container *ngIf="isEmptyResponse">
+    <p class="isCompleted">No team found yet</p>
+</ng-container>

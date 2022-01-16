@@ -1,0 +1,57 @@
+section {
+    width: 500px;
+    .action-btn {
+        cursor: pointer;
+        float: right;
+        a {
+            color: inherit;
+            mat-icon {
+                margin-left: 6px;
+            }
+        }
+    h1 {
+        .title {
+            width: 50px !important;
+        }
+       
+        }
+    }
+    p {
+        color: rgb(155, 151, 151);
+    }
+    mat-dialog-content {
+        width: 100%;
+        margin-top: 35px;
+        mat-form-field {
+            width: 100%;
+            mat-hint {
+                color: rgb(204, 142, 28);
+            }
+        }
+    }
+    mat-dialog-actions {
+        button {
+            width: 25%;
+        }
+    }
+    mat-accordion {
+        mat-expansion-panel {
+            margin-bottom: 5px;
+            mat-list {
+                mat-list-item {
+                    font-size: 15px;
+                    color: gray;
+                    mat-icon {
+                        font-size: 14px;
+                        position: absolute;
+                        right: 0;
+                        top: 20px;
+                        cursor: pointer;
+                        color: rgb(165, 66, 66);
+                    }
+                }
+            }
+        }
+    }
+
+}

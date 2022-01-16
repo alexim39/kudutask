@@ -1,0 +1,62 @@
+<section>
+  <span class="action-btn">
+    <a [routerLink]="['/dashboard/tasks', task._id]" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      mat-dialog-close matTooltip="Maximize">
+      <mat-icon>maximize</mat-icon>
+    </a>
+    <mat-icon [mat-dialog-close] matTooltip="Close">close</mat-icon>
+  </span>
+
+  <h1 mat-dialog-title>
+    <span class="title">{{task.title | titlecase}}</span>
+  </h1>
+
+  <p>{{task.description | titlecase}}</p>
+
+  <mat-dialog-content>
+    <kudutask-update-task [task]="task"></kudutask-update-task>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+
+    <kudutask-controls [task]="task"></kudutask-controls>
+
+<!--     <button [disabled]="!isOwner" (click)="deleteTask(task._id)" mat-button color="warn" title="Delete task">
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
+
+    <mat-slide-toggle [disabled]="task.assigned.assignees.length !== 0 || !user.isActive" [(ngModel)]="isMakeOpen">For team</mat-slide-toggle>
+
+    <button [disabled]="!isOwner" mat-button [matMenuTriggerFor]="markTask" title="Mark">
+      <mat-icon>done</mat-icon> Mark
+    </button>
+    <mat-menu #markTask="matMenu">
+      <button mat-menu-item (click)="markTaskAs(task._id, 'Completed')">As complete</button>
+      <button mat-menu-item (click)="markTaskAs(task._id, 'In progress')">As in progress</button>
+      <button mat-menu-item (click)="markTaskAs(task._id, 'Pending')">As pending</button>
+    </mat-menu>
+
+    <button [disabled]="!user.isActive || !isOwner || !isMakeOpen" mat-button [matMenuTriggerFor]="archive"
+      title="Archive">
+      <mat-icon>archive</mat-icon> Archive
+    </button>
+    <mat-menu #archive="matMenu">
+      <button mat-menu-item (click)="archiveTaskDialog(task)">Archive</button>
+      <button mat-menu-item (click)="unarchiveTaskDialog(task)">Unarchive</button>
+    </mat-menu>
+
+    <button [disabled]="!user.isActive || !isOwner || !isMakeOpen" (click)="openAssignTaskDialog(task)" mat-button
+      color="primary" title="Assign to users">
+      <mat-icon>assignment</mat-icon>
+      Assign
+    </button>
+
+    <button [disabled]="!user.isActive || !isOwner || !isMakeOpen" (click)="openShareTaskDialog(task)" mat-button
+      color="primary" title="Share in a team">
+      <mat-icon>share</mat-icon>
+      Share
+    </button> -->
+
+  </mat-dialog-actions>
+</section>

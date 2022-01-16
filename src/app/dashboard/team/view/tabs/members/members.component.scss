@@ -1,0 +1,19 @@
+mat-card {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 230px;
+    mat-card-header {
+        img {
+            height: 45px;
+            width: 45px;
+            margin-right: 6px;
+            border-radius: 50%;
+            background-color: whitesmoke;
+        }
+    }
+    mat-card-content {
+        .account-status {
+            color: rgb(211, 208, 208);
+        }
+    }
+}

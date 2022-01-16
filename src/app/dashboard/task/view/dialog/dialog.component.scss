@@ -1,0 +1,42 @@
+section {
+    max-width: 40rem;
+    .action-btn {
+        cursor: pointer;
+        float: right;
+        a {
+            color: inherit;
+            mat-icon {
+                margin-left: 6px;
+            }
+        }
+        h1 {
+            .title {
+                width: 50px !important;
+            }
+        }
+    }
+    p {
+        color: rgb(155, 151, 151);
+    }
+    mat-dialog-content {
+        width: 100%;
+        margin-top: 35px;
+        mat-divider {
+            margin: 20px 0;
+        }
+        mat-form-field {
+            width: 100%;
+        }
+    }
+    mat-dialog-actions {
+        margin-top: 1rem;
+        button {
+            mat-icon {
+                font-size: 15px;
+                margin-top: 8px;
+            }
+        }        
+    }
+   
+}
+

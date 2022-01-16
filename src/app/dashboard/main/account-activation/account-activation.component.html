@@ -1,0 +1,10 @@
+<div *ngIf="!isActive">
+    <mat-card>
+        <span class="warning">Your account is not yet activated, check your email to get your account activated to enable more features</span>
+        <span class="icons">
+            <mat-icon class="email" (click)="resendActivationLink()" matTooltip="Resend activation link">email</mat-icon>
+            <mat-icon class="close" (click)="closeActivationWarning()">close</mat-icon>
+        </span>
+    </mat-card>
+</div>
+

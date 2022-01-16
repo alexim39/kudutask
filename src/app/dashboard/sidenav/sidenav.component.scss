@@ -1,0 +1,22 @@
+mat-nav-list {
+    .task, .team, .tm {
+        .task-open, .team-open, .tm-open {
+            display: none;
+        }
+    }
+    .forTask, .forTeam, .forTM  {
+        margin-top: -8px;
+        display: none;
+        a {
+            span {
+                padding-left: 65px;
+                font-size: 14px;
+                
+            }
+        }
+    }
+    .active {
+        background-color: rgb(231, 231, 231);
+    }
+}
+

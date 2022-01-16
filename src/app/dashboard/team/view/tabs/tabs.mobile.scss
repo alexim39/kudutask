@@ -1,0 +1,27 @@
+@media (max-width: 800px) {
+    section {
+        width: 90%;
+        mat-tab-group {
+            .content {
+                padding-top: 20px;
+                display: flex;
+                flex-direction: column;
+                mat-card {
+                    margin-bottom: 5px;
+                    mat-card-header {
+                        img {
+                            height: 45px;
+                            width: 45px;
+                            margin-right: 6px;
+                            border-radius: 50%;
+                            background-color: whitesmoke;
+                        }
+                    }
+                }
+                
+                
+            }
+                
+        }
+    }
+}
