@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'kudutask-root',
   template: `<router-outlet></router-outlet>`
 })
-export class AppComponent {
-  title = 'kudutask';
-}
+export class AppComponent {}
