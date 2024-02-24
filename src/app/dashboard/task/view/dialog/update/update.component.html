@@ -1,0 +1,60 @@
+<mat-accordion>
+    <!-- Update task -->
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="hide-on-mobile">
+            Task Edit Form
+          </mat-panel-title>
+          <mat-panel-description>
+            {{panelOpenState ? 'Close' : 'Open'}} form
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+            
+          <form *ngIf="panelOpenState">
+              
+                
+            <mat-form-field>
+              <mat-label>Task title</mat-label>
+              <input matInput #title value="{{task.title}}" [disabled]="!isOwner">
+              <!-- <mat-error *ngIf=" form.get('title').hasError('required')">
+                Task title is required
+              </mat-error> -->
+            </mat-form-field>
+          
+            <mat-form-field>
+              <mat-label>Description</mat-label>
+              <textarea matInput #description value="{{task.description}}" [disabled]="!isOwner"></textarea>
+            </mat-form-field>
+      
+            <mat-radio-group color="primary" value="{{task.priority}}" (change)="radioChange($event)" [disabled]="!isOwner">
+              <mat-radio-button value="high">High Priority</mat-radio-button>
+              <mat-radio-button value="normal">Normal Priority</mat-radio-button>
+              <mat-radio-button value="low">Low Priority</mat-radio-button>
+            </mat-radio-group>
+      
+            <mat-form-field>
+              <mat-label>Select to update timeline</mat-label>
+              <mat-date-range-input [formGroup]="range" [rangePicker]="picker" [disabled]="!isOwner">
+                <input matStartDate formControlName="start" placeholder="Start date">
+                <input matEndDate formControlName="end" placeholder="End date">
+              </mat-date-range-input>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            
+              <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+              <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+            </mat-form-field>
+            
+            <mat-hint *ngIf="task.start">Selected task duration is: 
+              <strong> {{task.start | date}}</strong> 
+              <span *ngIf="task.end"> to </span>
+              <strong> {{task.end | date}}</strong>
+            </mat-hint>
+                
+            <div align="end">
+              <button [disabled]="!isOwner" mat-raised-button (click)="taskSubmit(task._id, title.value, description.value)" color="primary">Update</button>
+            </div>
+          </form>
+
+      </mat-expansion-panel>
+</mat-accordion>

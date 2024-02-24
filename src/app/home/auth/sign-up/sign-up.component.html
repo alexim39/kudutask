@@ -1,0 +1,73 @@
+<section>
+  <mat-card>
+    <mat-card-header>
+      <img src="./../../../../assets/img/profile.jpg">
+      <small>KuduTask registration</small>
+    </mat-card-header>
+    <mat-card-content>                
+        
+      <form [formGroup]="form" (ngSubmit)="onSignUp(form.value)">
+
+        <mat-form-field>
+          <mat-label>Enter last name</mat-label>
+          <input matInput type="text" formControlName="lastname" autofocus>
+          <mat-error *ngIf=" form.get('lastname').hasError('required')">
+            Your last name is required
+          </mat-error>
+          <mat-error *ngIf=" form.get('lastname').hasError('pattern')">
+            Enter a valid last name
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Enter your first name</mat-label>
+          <input matInput type="text" formControlName="firstname">
+          <mat-error *ngIf=" form.get('firstname').hasError('required')">
+            Your first name is required
+          </mat-error>
+          <mat-error *ngIf=" form.get('firstname').hasError('pattern')">
+            Enter a valid first name
+          </mat-error>
+          <!-- <mat-error *ngIf="form.get('firstname').errors?.ageValidator">
+            value not in range
+          </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Enter your email</mat-label>
+          <input matInput type="email" formControlName="email">
+          <mat-error *ngIf=" form.get('email').hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="form.get('email').hasError('required')">
+            Your email is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="passwordHide ? 'password' : 'text'" formControlName="password">
+          <mat-hint>Password must be at least 8 characters long!</mat-hint>
+          <div mat-icon-button matSuffix (click)="passwordHide = !passwordHide">
+            <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </div>
+          <mat-error *ngIf=" form.get('password').hasError('pattern')">
+            Password should be minimum of 8 characters
+          </mat-error>
+          <mat-error *ngIf=" form.get('password').hasError('required')">
+            Your password is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-checkbox color="primary" formControlName="tnc">Have you seen our T&C?</mat-checkbox>
+            
+        <button [disabled]="form.invalid" mat-flat-button color="primary">SIGN UP</button>
+      </form>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <a matTooltip="Already have account?" mat-button [routerLink]="['/signin']"><mat-icon>login</mat-icon> Sign in</a>              
+    </mat-card-actions>
+  </mat-card>
+</section>
+

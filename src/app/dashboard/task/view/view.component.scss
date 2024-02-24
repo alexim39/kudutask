@@ -1,0 +1,56 @@
+section {
+    mat-form-field {
+        margin: 10px 0 0 0;
+        width: 45%;
+    }
+    table {
+        width: 100%;
+        td {
+            span {
+                display: block;
+                color: gray;
+                font-size: 10px;
+                text-decoration: none !important;
+            }
+            .completer {
+                max-width: 180px;
+                white-space: nowrap;
+                overflow: hidden !important;
+                text-overflow: ellipsis;
+            }
+            
+        }
+        .mat-row {
+            .mat-cell {
+                small {
+                    color: rgb(255, 115, 0) !important;
+                }
+            }
+        }
+        
+        button {
+            mat-icon {
+                font-size: 15px !important;
+                color: rgb(103, 92, 197);
+            }
+        }           
+    }
+    .closed-task {
+        color: rgb(52, 146, 52);
+        text-decoration: line-through;
+    }
+    .high {
+        color: rgb(201, 35, 35);
+    }
+    .normal {
+        color: rgb(173, 173, 31);
+    }
+    .low {
+        color: rgb(109, 90, 53);
+    }
+}
+
+.isCompleted {
+    text-align: center;
+    color: rgb(209, 97, 23);
+}

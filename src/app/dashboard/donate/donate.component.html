@@ -1,0 +1,20 @@
+<section>
+    <div class="breadcrumb-wrap">
+        <ul class="breadcrumb">
+          <li>
+            <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+          </li>
+          <li>donate</li>
+        </ul>
+    </div>
+
+    <div class="mat-h1">Make Donation</div>
+    <p>We maintain this application and pay monthly fees to keep it up and running, we will need your support to meet this financial needs. No amount is too small.</p>
+    <div>
+        <mat-tab-group mat-align-tabs="center">
+            <mat-tab label="Card"> <kudutask-card></kudutask-card> </mat-tab>
+            <mat-tab label="Paypal"> <kudutask-paypal></kudutask-paypal> </mat-tab>
+            <mat-tab label="Skrill"> <kudutask-skrill></kudutask-skrill> </mat-tab>
+        </mat-tab-group>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+<a mat-button>
+    <mat-icon>circle_notifications</mat-icon>
+    <span 
+        [matMenuTriggerFor]="appNotification" 
+        [matMenuTriggerData]="{user: user}" 
+        [matBadge]="notifications" 
+        matBadgeOverlap="false" 
+        [matBadgeHidden]="notifications === 0">
+        Notifications
+    </span>
+</a>
+
+<mat-menu #appNotification="matMenu" xPosition="after">
+    <ng-template matMenuContent let-user="user">
+        <!-- <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Log off {{user.firstname}}</button> -->
+        <div class="content">
+            <section>
+                <div class="mat-h3">New Task Assignment</div><br>
+                <div class="mat-body">Please note that you have been assigned a task by Please note that you have been assigned a task by Alex Imenwo</div>
+                <button mat-flat-button color="warn">Delete</button>
+            </section>
+            <div class="view-all">
+                <a [routerLink]="['/dashboard/notifications']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">View all</a>
+            </div>
+        </div>
+        
+    </ng-template>
+</mat-menu>

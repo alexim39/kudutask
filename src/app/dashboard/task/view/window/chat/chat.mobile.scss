@@ -1,0 +1,16 @@
+.chat {
+    height: 70px;
+    overflow-y: auto;
+    margin: 20px 0;
+}
+.progress-chat-box {
+    width: 100%;
+    mat-form-field {
+        width: 80%;
+        display: block;
+    }
+    button {
+        float: left;
+        width: 80%;
+    }
+}

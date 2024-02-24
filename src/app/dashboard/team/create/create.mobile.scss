@@ -1,0 +1,32 @@
+@media (max-width: 800px) {
+    section {
+        width: 250px;
+        h1 {
+            span {
+                display: none;
+            }
+        }
+        form {
+            width: 100%;
+            mat-form-field {
+                width: 100%;
+            }
+            mat-hint {
+                font-size: 10px;
+            }
+            mat-radio-group {
+                .mat-radio-button {
+                    margin: 15px 0;
+                    display: flex;
+                    font-size: 11px;
+                    flex-direction: column;
+                }
+            }
+        }
+        mat-dialog-content {
+            width: 100%;
+            margin-top: 35px;
+            
+        }
+}
+}

@@ -1,0 +1,12 @@
+@media (max-width: 800px) {
+    mat-toolbar {
+        a {
+            margin-right: 30px;
+        }
+        a {
+            mat-icon {
+                display: none;
+            }
+        }
+    }
+}

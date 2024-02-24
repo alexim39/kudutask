@@ -1,0 +1,24 @@
+
+<button class="open-button" (click)="openForm()">Chat</button>
+
+<div class="chat">
+
+  <form class="form-container">
+    <h1>Chat</h1>
+
+    <div class="chat-container" *ngFor="let taskMessage of taskMessages" [ngClass]="{
+      'darker': isOwner(taskMessage)}">
+       <small>{{taskMessage.owner | titlecase}}</small>
+      <p>{{taskMessage.message | lowercase}}</p>
+      <span class="time-right">{{taskMessage.sentTime | date:"HH:mm" }}</span>
+    </div>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea matInput name="chatMsg" #chatMsg placeholder="Type message.." name="msg" required></textarea>
+
+    <button (click)="onMsgSubmit(chatMsg.value)" type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+  </form>
+
+  
+</div>

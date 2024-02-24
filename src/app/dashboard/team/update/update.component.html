@@ -1,0 +1,31 @@
+<section>
+  <div>
+    <h1 mat-dialog-title>
+      Edit {{team.name | uppercase}}
+      <span [mat-dialog-close]="true">
+        <mat-icon>close</mat-icon>
+      </span>
+    </h1>
+  
+    <mat-dialog-content>
+      
+        <mat-form-field>
+          <mat-label>Team name</mat-label>
+          <input matInput #teamName value="{{team.name}}">
+          <!-- <mat-error *ngIf=" form.get('name').hasError('required')">
+            Team name is required
+          </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput #description value="{{team.description}}"></textarea>
+        </mat-form-field>
+      
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-flat-button [disabled]=" !teamName.value" (click)="onEditTeamSubmit(teamName.value, description.value)" type="submit" color="primary">Submit</button>
+    </mat-dialog-actions>
+  </div>
+</section>
+  

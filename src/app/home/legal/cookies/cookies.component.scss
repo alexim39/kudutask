@@ -1,0 +1,18 @@
+.content {
+    height: 100vh;
+    p {
+        text-align: justify;
+    }
+    ul, ol {
+        li {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .content {
+        height: 100vh;
+    }
+}

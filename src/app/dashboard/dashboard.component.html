@@ -1,0 +1,82 @@
+<mat-sidenav-container class="sidenav-container" *ngIf="currentUser">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+    <mat-toolbar class="sideMenu">
+      <img [src]="imagePath" />
+      {{currentUser.firstname | titlecase }}
+      <span class="spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="user">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #user="matMenu" xPosition="before">
+
+        <a mat-menu-item [routerLink]="['/dashboard/profile']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> 
+          <mat-icon>person</mat-icon>
+          Profile
+        </a>
+
+        <a mat-menu-item [routerLink]="['/dashboard/feedback']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> 
+          <mat-icon>feedback</mat-icon>
+          Feedback
+        </a>
+
+        <button mat-menu-item [matMenuTriggerFor]="security">
+          <mat-icon>security</mat-icon>
+          <span>Security</span>
+        </button>
+        <mat-menu #security="matMenu">
+          <a mat-menu-item [routerLink]="['/dashboard/security/password']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> 
+            <mat-icon>password</mat-icon>
+            Password
+          </a>
+        </mat-menu>
+
+        <a mat-menu-item [routerLink]="['/dashboard/donate']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <mat-icon>paid</mat-icon>
+          <span>Donate</span>
+        </a>
+
+      </mat-menu>
+
+    </mat-toolbar>
+
+    <!-- Sidenav list -->
+    <mat-nav-list>
+      <kudutask-sidenav-list></kudutask-sidenav-list>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <a routerLink="/dashboard">
+        <span class="logo">
+            <mat-icon>task</mat-icon>
+            KuduTask
+        </span>
+      </a>
+      <span class="spacer"></span>
+      
+      <kudutask-notification></kudutask-notification>
+      
+      <a mat-button (click)="signOut()"><mat-icon>power_settings_new</mat-icon>Sign out</a>
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+    <main>
+      <router-outlet></router-outlet> 
+    </main>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

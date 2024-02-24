@@ -1,0 +1,33 @@
+section {
+    .team-wrap {
+        display: flex;
+        flex-direction: row;
+        .team-list {
+            width: 25%;
+            mat-nav-list {
+                a {
+                    mat-icon {
+                        color: rgb(236, 162, 65);
+                    }
+                    div {
+                        small {
+                            color: gray;
+                        }
+                        .creator {
+                            font-size: 10px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        .team-content {
+            width: 75%;
+        }
+    }
+}
+.isCompleted {
+    text-align: center;
+    color: rgb(209, 97, 23);
+    
+}

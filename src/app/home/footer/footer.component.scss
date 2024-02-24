@@ -1,0 +1,45 @@
+footer {
+    height: 80px;
+    background-color: #4A2781;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    .copyright {
+        margin-left: 25px;
+        a {
+            text-decoration: none;
+            color: rgb(172, 172, 172);
+        }
+        .tnc {
+            a {
+                text-decoration: none;
+                margin-right: 15px;
+                font-size: 11px;
+                color: rgb(172, 172, 172);
+            }
+        }
+    }
+    
+    .social {
+        margin-right: 25px;
+        a {
+            text-decoration: none;
+            color: rgb(172, 172, 172);
+            font-size: 12px;
+        }
+        .github:hover {
+            background-color: #24292e;
+            color: white;
+        }
+        .twitter:hover {
+            background-color: #1DA1F2;
+            color: white;
+        }
+        .facebook:hover {
+            background-color: #4267B2;
+            color: white;
+        }
+    }
+}

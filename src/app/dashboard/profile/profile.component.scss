@@ -1,0 +1,50 @@
+section {
+    .profile-details {
+        width: 60%;
+        padding: 45px;
+        mat-card-header {
+            .card-img {
+                margin-top: 12px;
+                img {
+                    height: 45px;
+                    width: 45px;
+                    margin-left: -3px;
+                    border-radius: 50%;
+                    background-color: whitesmoke;
+                }
+            }
+        }
+        mat-card-content {
+            section {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .lable {
+                    width: 45%;
+                    div {
+                        mat-form-field {
+                            width: 100%;
+                        }
+                    }
+                }
+                .field {
+                    width: 45%;
+                    form {
+                        mat-form-field {
+                            width: 100%;
+                        }
+                        button {
+                            //float: right;
+                            margin-top: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .delete-profile {
+        margin-top: 15px;
+        width: 65%;
+    }
+}

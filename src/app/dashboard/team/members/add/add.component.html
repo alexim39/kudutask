@@ -1,0 +1,60 @@
+<section>
+    <h1 mat-dialog-title>
+        Add Team Member form
+  
+        <span [mat-dialog-close]="true">
+          <mat-icon>close</mat-icon>
+        </span>
+    </h1>
+    
+    <mat-dialog-content>
+      <mat-form-field>
+        <mat-label>Emails</mat-label>
+        <mat-chip-option #chipList>
+          <mat-chip
+            *ngFor="let email of teamMembersEmails"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(email)">
+            {{email}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="New email.."
+            #emailInput
+            [formControl]="emailCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)" >
+        </mat-chip-option>
+        <!-- <mat-chip-list #chipList>
+          <mat-chip
+            *ngFor="let email of teamMembersEmails"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(email)">
+            {{email}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="New email.."
+            #emailInput
+            [formControl]="emailCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)" >
+        </mat-chip-list> -->
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let email of filteredEmails | async" [value]="email">
+            {{email}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-flat-button [disabled]=" isNotActivatedAccount  || teamMembersEmails.length === 0" (click)="onAddMemberSubmit()" type="submit" color="primary">Add</button>
+    </mat-dialog-actions>
+</section>
+  

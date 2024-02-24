@@ -1,0 +1,64 @@
+<mat-nav-list>
+  <div mat-subheader>Menu</div>
+
+  <!-- Dashboare -->
+  <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+    <mat-icon mat-list-icon>dashboard</mat-icon>
+    <span mat-line>Dashboard</span>
+  </a>
+
+  <!-- Task -->
+  <mat-list-item class="task">
+    <mat-icon mat-list-icon>task</mat-icon>
+    <div mat-line>Task Control</div>
+    <mat-icon class="task-close">keyboard_arrow_left</mat-icon>
+    <mat-icon class="task-open">keyboard_arrow_down</mat-icon>
+  </mat-list-item>
+  <mat-nav-list class="forTask">
+    <a mat-list-item (click)="openNewTaskDialog()"> 
+      <span mat-line>Create task</span>
+    </a>
+    <a mat-list-item [routerLink]="['/dashboard/tasks']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> 
+      <span mat-line>View task</span>
+    </a>
+  </mat-nav-list>
+
+  <!-- Team -->
+  <mat-list-item class="team">
+    <mat-icon mat-list-icon>groups</mat-icon>
+    <div mat-line>Team Control</div>
+    <mat-icon class="team-close">keyboard_arrow_left</mat-icon>
+    <mat-icon class="team-open">keyboard_arrow_down</mat-icon>
+  </mat-list-item>
+  <mat-nav-list class="forTeam">
+    <a mat-list-item (click)="openNewTeamDialog()"> 
+      <span mat-line>Create team</span>
+    </a>
+    <a mat-list-item [routerLink]="['/dashboard/teams']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> 
+      <span mat-line>View teams</span>
+    </a>
+  </mat-nav-list>
+
+  <a mat-list-item [routerLink]="['/dashboard/evaluator']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+    <mat-icon mat-list-icon>analytics</mat-icon>
+    <span mat-line>Evaluator</span>
+  </a>
+
+  <!-- Task manager -->
+  <!-- <mat-list-item class="tm">
+    <mat-icon mat-list-icon>analytics</mat-icon>
+    <div mat-line>Task Analyser</div>
+    <mat-icon class="tm-close">keyboard_arrow_left</mat-icon>
+    <mat-icon class="tm-open">keyboard_arrow_down</mat-icon>
+  </mat-list-item>
+  <mat-nav-list class="forTM">
+    <mat-list-item (click)="openTeamDialog()"> 
+      <a mat-line>New team</a>
+    </mat-list-item>
+    <mat-list-item (click)="teams()"> 
+      <a mat-line>View teams</a>
+    </mat-list-item>
+  </mat-nav-list> -->
+
+  <!-- <mat-divider></mat-divider> -->
+  <mat-nav-list>

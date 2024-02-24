@@ -1,0 +1,20 @@
+<div class="page">
+  <section class="activation">
+    <mat-card>
+      <mat-card-content>   
+          <div class="sucess" *ngIf="isSuccess">
+              {{message}}, go ahead to <a [routerLink]="['/signin']">Sign in</a> and enjoy Kudutask
+          </div>    
+          <div class="error" *ngIf="isError">
+              {{message}}: 
+              <ul>
+                  <li>Already activated account</li>
+                  <li>Timeout of activation period</li>
+                  <li>Clicking of invalid link</li>
+              </ul>
+              <a *ngIf="isActive" (click)="resendLink()">Resend activation link</a>
+          </div>            
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

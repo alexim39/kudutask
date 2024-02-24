@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <a routerLink="/">
+        <span class="logo">
+            <mat-icon>task</mat-icon>
+            KuduTask
+        </span>
+    </a>
+
+    <span class="spacer"></span>
+    
+    <a mat-button routerLink="/signin"><mat-icon>login</mat-icon> Sign In</a>
+    <a routerLink="/signup" mat-button><mat-icon>app_registration</mat-icon> Sign Up</a>
+    <a mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+    </a>
+    <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/contacts"><mat-icon>contacts</mat-icon> Contacts</a>
+        <!-- <a mat-menu-item routerLink="/contacts"><mat-icon>contact_support</mat-icon> Supports</a> -->
+        <a mat-menu-item routerLink="/donate"><mat-icon>attach_money</mat-icon> Donate</a>
+    </mat-menu>
+</mat-toolbar>

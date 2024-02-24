@@ -1,0 +1,99 @@
+<section>
+    <mat-accordion>
+
+        <ng-container *ngIf="progressReports.length > 0">
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                <mat-panel-title> Acknowledgments </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let report of progressReports">
+                    <mat-list>
+                        <mat-list-item>{{report.assignee.firstname | titlecase}} {{report.assignee.lastname | titlecase}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                        <table>
+                            <tr>
+                                <td class="left">Started</td>
+                                <td class="right">{{report.isStartTask ? 'Yes' : 'No'}}</td>
+                            </tr>
+                            <tr>
+                                <td class="left">Start date</td>
+                                <td class="right" *ngIf="report.startDate">{{report.startDate | date :'medium'}}</td>
+                                <td class="right" *ngIf="!report.startDate">Task not started yet</td>
+                            </tr>
+                        </table>
+                    </mat-list>
+                </div>
+            </mat-expansion-panel>
+        </ng-container>
+        
+
+        <ng-container *ngIf="progressReports.length > 0">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                <mat-panel-title> Task In Progress </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let report of progressReports">
+                    <mat-list>
+                        <mat-list-item>{{report.assignee.firstname | titlecase}} {{report.assignee.lastname | titlecase}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                        <table>
+                            <tr>
+                                <td class="left">Tentative date of completion</td>
+                                <td class="right" *ngIf="report.challenges">{{report.challenges.tentativeDate | date :'medium'}}</td>
+                                <td class="right" *ngIf="!report.challenges">No tentative date yet</td>
+                            </tr>
+                        </table>
+                    </mat-list>
+                </div>
+            </mat-expansion-panel>
+        </ng-container>
+        
+
+        <ng-container *ngIf="progressReports.length > 0">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                <mat-panel-title> Completed Task </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let report of progressReports">
+                    <mat-list>
+                        <mat-list-item>{{report.assignee.firstname | titlecase}} {{report.assignee.lastname | titlecase}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                        <table>
+                            <!-- <tr>
+                                <td class="left">Completed</td>
+                                <td class="right">{{report.isTaskComplete | titlecase}}</td>
+                            </tr> -->
+                            <tr>
+                                <td class="left">Completed date</td>
+                                <td class="right" *ngIf="report.taskCompleteDate">{{report.taskCompleteDate | date :'medium'}}</td>
+                                <td class="right" *ngIf="!report.taskCompleteDate">Task have not been completed</td>
+                            </tr>
+                        </table>
+                    </mat-list>
+                </div>
+            </mat-expansion-panel>
+        </ng-container>
+
+        <ng-container *ngIf="pendingReports.length > 0">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                <mat-panel-title> Pending Task </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let report of pendingReports">
+                    <mat-list>
+                        <mat-list-item>{{report.assignee.firstname | titlecase}} {{report.assignee.lastname | titlecase}}</mat-list-item>
+                        <mat-divider></mat-divider>
+                    </mat-list>
+
+                    
+                </div>
+            </mat-expansion-panel>
+        </ng-container>
+
+
+        <!-- <ng-container *ngIf="progressReports.length == 0">
+            <p>This task was not assigned to anyone</p>
+        </ng-container> -->
+        
+    </mat-accordion>
+</section>

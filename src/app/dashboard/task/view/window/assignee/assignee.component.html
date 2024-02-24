@@ -1,0 +1,18 @@
+<section>
+  <h1>{{task.title | uppercase}}</h1>
+  <p>{{task.description | sentencecase}}</p>
+
+  <div class="container">
+    <!-- Task chat -->
+    <kudutask-chat [task]='task'></kudutask-chat>
+
+    <div class="task-report">
+      <kudutask-status-cards [task]='task'></kudutask-status-cards>
+      <kudutask-summary [task]='task'></kudutask-summary>
+    </div>
+    
+    <div class="task-progress">
+      <kudutask-task-progress [task]='task'></kudutask-task-progress>
+    </div>
+  </div>
+</section>

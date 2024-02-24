@@ -1,0 +1,42 @@
+<div class="page">
+
+    <!-- <div class="breadcrumb-wrap">
+        <ul class="breadcrumb">
+        <li>
+            <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        </li>
+        <li>donate</li>
+        </ul>
+    </div> -->
+
+    <section class="contacts">
+        
+        <div class="contacts-menu">
+            <mat-list>
+                <mat-list-item> 
+                    <a [routerLink]="['/donate/card']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Donate With Card</a>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> 
+                    <a [routerLink]="['/donate/skrill']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Donate With Skrill </a>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <a [routerLink]="['/donate/paypal']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Donate With Paypal </a>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+
+
+        <div class="contacts-content">
+            <div class="mat-h1">Make Donation</div>
+            <p>We maintain this application and pay monthly fees to keep it up and running, we will need your support to meet this financial needs. No amount is too small.</p>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+    </section>
+
+</div>

@@ -1,0 +1,42 @@
+mat-accordion {
+    mat-expansion-panel {
+        margin-bottom: 5px;
+        mat-list {
+            mat-list-item {
+               margin-bottom: -25px;
+               margin-top: -10px;
+               font-size: 14px;
+               display: flex;
+               flex-direction: row;
+               justify-content:space-between;
+               .right {
+                position: absolute;
+                left: 360px;  
+                button {
+                    float: right;
+                    mat-icon {
+                        font-size: 14px;
+                    }
+                }
+               }
+            }
+        }
+    }
+}
+form {
+    width: 100%;
+    mat-form-field {
+        width: 100%;
+    }
+    mat-hint {
+        font-size: 12px;
+    }
+    mat-radio-group {
+        .mat-radio-button {
+            margin: 15px 0;
+            display: flex;
+            font-size: 11px;
+            flex-direction: column;
+        }
+    }
+}

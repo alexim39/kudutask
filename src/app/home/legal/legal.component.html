@@ -1,0 +1,27 @@
+<div class="page">
+
+    <section class="legal">
+
+        <div class="legal-menu">
+            <mat-list>
+                <mat-list-item> 
+                    <a [routerLink]="['/legal/terms']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">KuduTask Terms of Service</a>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item> 
+                    <a [routerLink]="['/legal/privacy']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Privacy Policy </a>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <a [routerLink]="['/legal/cookies']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Cookies Policy </a>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </div>
+
+
+        <div class="legal-content">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</div>

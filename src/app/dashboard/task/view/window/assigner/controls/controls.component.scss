@@ -1,0 +1,16 @@
+mat-card {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: inherit;
+    mat-slide-toggle {
+        margin-top: 0.5rem;
+    }
+    button {
+        mat-icon {
+            font-size: 15px;
+            margin-top: 8px;
+        }
+    }    
+}

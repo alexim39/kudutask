@@ -1,0 +1,10 @@
+<mat-card class="timeline">
+  <div class="mat-h2">Task Timeline</div>
+  <mat-card-content>
+    <div><span>Scheduled on:</span> {{task.createDate | date}}</div>
+    <div><span>Timeline:</span> {{task.start | date}} to {{task.end | date}}</div>
+    <div><span>Duration:</span> {{taskDuration(task)}}</div>
+    <div><span>Elapsed time:</span> {{elapsedTime(task)}}</div>
+    <div><span>Outstanding time:</span> {{countdown}}</div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,20 @@
+section {
+    .feedback-details {
+        width: 40%;
+        padding: 45px;
+        
+        mat-card-content {
+            form {
+                mat-form-field {
+                    width: 100%;
+                }
+                button {
+                    display: block;
+                    margin-top: 12px;
+                    width: 30%;                
+                }
+            }
+        }
+    }
+
+}

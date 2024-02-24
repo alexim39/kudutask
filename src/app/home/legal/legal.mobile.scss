@@ -1,0 +1,35 @@
+@media (max-width: 800px) {
+    .page {
+        display: flex;
+        flex-direction: column;
+        .legal {
+            display: flex;
+            flex-direction: column;
+            //margin: 25px 50px;
+            .legal-menu {
+                width: 100%;
+                margin-right: 30px;
+                mat-list {
+                    mat-list-item {
+                        a {
+                            text-decoration: none;
+                            color: rgb(56, 56, 56);
+                            font-weight: bold;
+                        }
+                        a:hover {
+                            color: rgb(151, 149, 149);
+                        }
+                        a.active {
+                            color: rgb(151, 149, 149);
+                        }
+                    }
+                   
+                }
+                
+            }
+            .legal-content {
+                width: 100%;
+            }
+        }
+    }
+}

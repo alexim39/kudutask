@@ -1,0 +1,44 @@
+
+<section>
+  <!-- Inactive notification alert -->
+  <kudutask-account-activation></kudutask-account-activation>
+
+  <div class="breadcrumb-wrap">
+    <ul class="breadcrumb">
+      <li>
+        <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+      </li>
+      <li></li>
+    </ul>
+  </div>
+
+  <section class="main">
+    <!-- 
+      1. information about user task
+        - pending task
+        - task deadline info
+      2. information about user team
+     -->
+
+     <mat-card>
+      <mat-card-header>
+        <mat-card-title>Pending Task</mat-card-title>
+        <mat-card-subtitle>Task yet to be closed out</mat-card-subtitle>
+      </mat-card-header>
+     </mat-card>
+
+     <mat-card>
+      <mat-card-header>
+        <mat-card-title>Task Deadline</mat-card-title>
+        <mat-card-subtitle>Task close to deadline</mat-card-subtitle>
+      </mat-card-header>
+     </mat-card>
+
+  </section>
+
+  <div class="fab" matTooltip="Create task">
+      <button (click)="openNewTaskDialog()" mat-fab color="primary" matRipple>
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+</section>

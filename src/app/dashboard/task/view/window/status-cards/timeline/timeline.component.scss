@@ -1,0 +1,15 @@
+.timeline {
+    margin-bottom: 1rem;
+    mat-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        div {
+            padding: 0.2rem 0;
+            span {
+               color: gray;
+               margin-right: 0.5rem;
+            }
+        }
+    }
+}

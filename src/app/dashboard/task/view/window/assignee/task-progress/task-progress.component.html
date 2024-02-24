@@ -1,0 +1,67 @@
+<mat-vertical-stepper #stepper>
+  <mat-step label="Task acknowledgement" state="phone">
+    <ng-template matStepperIcon="edit">
+      <mat-icon color="accent">done</mat-icon>
+    </ng-template>
+
+    <p>
+      <mat-slide-toggle color="primary" [(ngModel)]="isUnderstandTask">I understand the task</mat-slide-toggle>
+    </p>
+    <p>
+      <mat-slide-toggle color="primary" [(ngModel)]="isHaveInfo">I have the information needed to complete the task</mat-slide-toggle>
+    </p>
+    <p>
+      <mat-slide-toggle color="primary" [(ngModel)]="isStartTask">Start task</mat-slide-toggle>
+    </p>
+    <div>
+      <button mat-flat-button (click)="onDecline(task._id)" [disabled]="isDeclinedTask">Decline</button>
+      <button mat-flat-button (click)="onAcknoledgeTask(task._id)" [disabled]="!isStartTask">Accept</button>
+    </div>
+  </mat-step>
+
+  <mat-step label="Task progress report" state="chat">
+    <p>
+      <mat-slide-toggle color="primary" [(ngModel)]="isEncounterChallenge">I am encountering few challenges</mat-slide-toggle>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Drop task challenges report for assigner</mat-label>
+        <textarea [disabled]="!isEncounterChallenge" matInput #comments></textarea>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Select tentative completion date</mat-label>
+        <input matInput [matDatepicker]="picker" [min]="minDate" #tentativeDate>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </p>
+
+    <div>
+      <button mat-flat-button matStepperNext>Next</button>
+      <button (click)="onProgressSubmit(tentativeDate.value, comments.value, task._id)" [disabled]="!tentativeDate.value" mat-flat-button class="submit-report" color="primary">Submit</button> 
+    </div>
+  </mat-step>
+
+  <mat-step label="Task complete">
+    <p>
+      <mat-slide-toggle color="primary" [(ngModel)]="isTaskCompleted">Mark task as complete</mat-slide-toggle>
+    </p>
+
+    <div>
+      <button mat-flat-button matStepperPrevious>Back</button>
+      <button [disabled]="task.isArchive" (click)="onMarkTaskAsCompleted()" mat-flat-button>Mark as completed</button>
+    </div>
+  </mat-step>
+  
+  <!-- Icon overrides. -->
+  <ng-template matStepperIcon="phone">
+    <mat-icon>call_end</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="chat">
+    <mat-icon>forum</mat-icon>
+  </ng-template>
+</mat-vertical-stepper>

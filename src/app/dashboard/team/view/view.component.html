@@ -1,0 +1,44 @@
+<div class="breadcrumb-wrap">
+  <ul class="breadcrumb">
+    <li>
+      <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+    </li>
+    <li>
+      <a [routerLink]="['/dashboard/teams']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">teams</a>
+    </li>
+    <li>details</li>
+  </ul>
+</div>
+
+<ng-container *ngIf="!isEmptyResponse">
+  <section *ngIf="teams.length > 0">
+
+    <div class="team-wrap">
+
+      <!-- team detail contents -->
+      <div class="team-content"> 
+        <router-outlet></router-outlet> 
+      </div>
+
+      <div class="team-list">
+        <mat-nav-list>
+          <div mat-subheader>Teams</div>
+          <a mat-list-item *ngFor="let team of teams" (click)="goToTeam(team._id)">
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <div mat-line>{{team.name | uppercase}}</div>
+            <div mat-line> 
+              <small>{{team.description | sentencecase | truncate:30}}</small>
+              <small class="creator">Created by: {{team.owner | titlecase}}</small>
+            </div>
+            
+            <mat-divider></mat-divider>
+          </a>
+        </mat-nav-list>
+      </div>
+
+    </div>
+  </section>
+</ng-container>
+<ng-container *ngIf="isEmptyResponse">
+  <p class="isCompleted">No team created yet</p>
+</ng-container>

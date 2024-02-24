@@ -1,0 +1,21 @@
+section {
+    margin-top: 10px;
+    div {
+        mat-list {
+            padding: 0.5rem 0;
+            table {
+                width: 100%;
+                tr {
+                    .left {
+                        text-align: left;
+                        padding: 0.5rem 0;
+                    }
+                    .right {
+                        text-align: right;
+                        padding: 0.5rem 0;
+                    }
+                }
+            }
+        }
+    }
+}

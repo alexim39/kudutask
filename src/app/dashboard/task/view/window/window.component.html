@@ -1,0 +1,35 @@
+<div class="breadcrumb-wrap">
+    <ul class="breadcrumb">
+      <li>
+        <a [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard/tasks']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Tasks</a>
+      </li>
+      <li>task details</li>
+    </ul>
+</div>
+
+<div *ngIf="!isEmptyResponse">
+
+ <section *ngIf="task">
+    <ng-container *ngIf="isOwer">
+      <kudutask-assigner [task]="task"></kudutask-assigner>
+    </ng-container>
+  </section>
+
+  
+  <section *ngIf="task">
+    <ng-container *ngIf="!isOwer">
+      <kudutask-assignee [task]="task"></kudutask-assignee>
+    </ng-container>
+  </section>
+
+
+</div>
+<div *ngIf="isEmptyResponse">
+  <p class="isCompleted">Task record not found</p>
+</div>
+
+
+

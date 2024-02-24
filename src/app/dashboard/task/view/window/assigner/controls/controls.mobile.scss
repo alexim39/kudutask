@@ -1,0 +1,10 @@
+@media (max-width: 800px) {
+    mat-card {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        button {
+            margin-top: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-slide-toggle color="primary" [disabled]="task.assigned.assignees.length > 0 || !user.isActive" [(ngModel)]="isMakeOpen" matTooltip="Mark task">For team</mat-slide-toggle>
+    <button [disabled]="!isOwner" mat-button [matMenuTriggerFor]="markTask"  mat-button matTooltip="Mark task"><mat-icon>done</mat-icon></button>
+    <button [disabled]="!user.isActive || !isOwner || !isMakeOpen" mat-button [matMenuTriggerFor]="archive" mat-button matTooltip="Archive task"><mat-icon>archive</mat-icon></button>
+    <button [disabled]="!user.isActive || !isOwner || !isMakeOpen" (click)="openAssignTaskDialog(task)" mat-button matTooltip="Assign task"><mat-icon>assignment</mat-icon></button>
+    <button [disabled]="!user.isActive || !isOwner || !isMakeOpen" (click)="openShareTaskDialog(task)" mat-button matTooltip="Share task"><mat-icon>share</mat-icon></button>
+    <!-- <button mat-button matTooltip="Update task"><mat-icon>edit</mat-icon></button> -->
+    <button [disabled]="!isOwner" (click)="deleteTask(task._id)" mat-button color="warn"  mat-button color="warn" matTooltip="Delete task"><mat-icon>delete</mat-icon></button>
+</mat-card>
+<!-- Mark task -->
+<mat-menu #markTask="matMenu">
+    <button mat-menu-item (click)="markTaskAs(task._id, 'Completed')">As complete</button>
+    <button mat-menu-item (click)="markTaskAs(task._id, 'In progress')">As in progress</button>
+    <button mat-menu-item (click)="markTaskAs(task._id, 'Pending')">As pending</button>
+</mat-menu>
+<!-- Archive -->
+<mat-menu #archive="matMenu">
+    <button mat-menu-item (click)="archiveTaskDialog(task)">Archive</button>
+    <button mat-menu-item (click)="unarchiveTaskDialog(task)">Unarchive</button>
+</mat-menu>
