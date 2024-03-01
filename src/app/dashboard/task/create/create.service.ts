@@ -38,6 +38,7 @@ export class CreateTaskService {
   }
 
   create(newTaskObj: CreateTaskInterface): Observable<ResponseInterface> {
+    console.log('new task ===',newTaskObj)
     return this.http.post<ResponseInterface>(`${this.API_DOMAIN}/api/task`, newTaskObj, httpOptions)
       .pipe(
         retry(2), // retry a failed request up to 2 times

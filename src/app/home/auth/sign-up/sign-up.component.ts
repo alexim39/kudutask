@@ -31,6 +31,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
       this.signUpService.signUp(formObject).subscribe((res: ResponseInterface) => {
 
         if (res.code === 200) {
+          console.log('2nd return ',res)
           this.snackBar.open(`${res.msg}`, `Close`, {
             duration: 8000,
             panelClass: ['success']

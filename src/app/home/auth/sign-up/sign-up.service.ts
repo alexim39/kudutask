@@ -37,10 +37,9 @@ export class SignUpService {
   }
 
   signUp(signUpObj: SignUpInterface): Observable<ResponseInterface> {
-
     return this.http.post<ResponseInterface>(`${this.API_DOMAIN}/api/auth/signup`, signUpObj, httpOptions)
       .pipe(
-        retry(2), // retry a failed request up to 2 times
+        //retry(2), // retry a failed request up to 2 times
         catchError(this.handleError)
       );
   }
