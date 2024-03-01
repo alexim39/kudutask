@@ -18,7 +18,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class CreateTaskService {
-  private API_DOMAIN: string = environment.API_DOMAIN;
+ // private API_DOMAIN: string = environment.API_DOMAIN;
+  private API_DOMAIN: string = 'https://kudutaskapi-rhcjor10.b4a.run';
 
   constructor(private http: HttpClient) { }
 

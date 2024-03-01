@@ -51,9 +51,7 @@ export class CreateComponent implements OnInit, OnDestroy {
       // push into list
       this.subscriptions.push(
         this.createTask.create(newTaskObj).subscribe((res: any) => {
-
           if (res.code === 200) {
-    
             this.snackBar.open(`${res.msg}`, `Close`, {
               duration: 4000,
               panelClass: ['success']
@@ -70,7 +68,7 @@ export class CreateComponent implements OnInit, OnDestroy {
             this.communicator.triggerChanges(communicate);
           }
         }, (error) => {
-          this.snackBar.open(`${error.error.msg}`, `Close`, {
+          this.snackBar.open(`${error.error}`, `Close`, {
             duration: 4000,
             panelClass: ['error']
           });
